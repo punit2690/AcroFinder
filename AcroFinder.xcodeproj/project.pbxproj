@@ -13,9 +13,12 @@
 		8D05D1CF1BE855E30067B77B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8D05D1CD1BE855E30067B77B /* Main.storyboard */; };
 		8D05D1D11BE855E30067B77B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8D05D1D01BE855E30067B77B /* Assets.xcassets */; };
 		8D05D1D41BE855E30067B77B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8D05D1D21BE855E30067B77B /* LaunchScreen.storyboard */; };
+		8D05D1E01BE865E60067B77B /* AcronymSearchResult.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D05D1DF1BE865E60067B77B /* AcronymSearchResult.m */; };
+		975D62BC5547014EEAE1763B /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 561625DC6EB6C0DDA776920D /* libPods.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		561625DC6EB6C0DDA776920D /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		8D05D1C11BE855E30067B77B /* AcroFinder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AcroFinder.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8D05D1C51BE855E30067B77B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		8D05D1C71BE855E30067B77B /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -26,6 +29,10 @@
 		8D05D1D01BE855E30067B77B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8D05D1D31BE855E30067B77B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8D05D1D51BE855E30067B77B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8D05D1DE1BE865E60067B77B /* AcronymSearchResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AcronymSearchResult.h; path = Models/AcronymSearchResult.h; sourceTree = "<group>"; };
+		8D05D1DF1BE865E60067B77B /* AcronymSearchResult.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AcronymSearchResult.m; path = Models/AcronymSearchResult.m; sourceTree = "<group>"; };
+		A084D8629F9D742B7BB3A8F5 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		D99197DB55646F7738959706 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,17 +40,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				975D62BC5547014EEAE1763B /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6DB2C0D1F62D51A541470459 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				561625DC6EB6C0DDA776920D /* libPods.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		8D05D1B81BE855E30067B77B = {
 			isa = PBXGroup;
 			children = (
 				8D05D1C31BE855E30067B77B /* AcroFinder */,
 				8D05D1C21BE855E30067B77B /* Products */,
+				E1AE77ABAE12686DF35A1724 /* Pods */,
+				6DB2C0D1F62D51A541470459 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -58,14 +76,9 @@
 		8D05D1C31BE855E30067B77B /* AcroFinder */ = {
 			isa = PBXGroup;
 			children = (
-				8D05D1C71BE855E30067B77B /* AppDelegate.h */,
-				8D05D1C81BE855E30067B77B /* AppDelegate.m */,
-				8D05D1CA1BE855E30067B77B /* ViewController.h */,
-				8D05D1CB1BE855E30067B77B /* ViewController.m */,
-				8D05D1CD1BE855E30067B77B /* Main.storyboard */,
-				8D05D1D01BE855E30067B77B /* Assets.xcassets */,
-				8D05D1D21BE855E30067B77B /* LaunchScreen.storyboard */,
-				8D05D1D51BE855E30067B77B /* Info.plist */,
+				8D05D1DD1BE85A150067B77B /* ViewControllers */,
+				8D05D1DC1BE85A0D0067B77B /* Views */,
+				8D05D1DB1BE85A060067B77B /* Models */,
 				8D05D1C41BE855E30067B77B /* Supporting Files */,
 			);
 			path = AcroFinder;
@@ -74,9 +87,49 @@
 		8D05D1C41BE855E30067B77B /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				8D05D1D01BE855E30067B77B /* Assets.xcassets */,
+				8D05D1D21BE855E30067B77B /* LaunchScreen.storyboard */,
+				8D05D1D51BE855E30067B77B /* Info.plist */,
+				8D05D1C71BE855E30067B77B /* AppDelegate.h */,
+				8D05D1C81BE855E30067B77B /* AppDelegate.m */,
 				8D05D1C51BE855E30067B77B /* main.m */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		8D05D1DB1BE85A060067B77B /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				8D05D1DE1BE865E60067B77B /* AcronymSearchResult.h */,
+				8D05D1DF1BE865E60067B77B /* AcronymSearchResult.m */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		8D05D1DC1BE85A0D0067B77B /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				8D05D1CD1BE855E30067B77B /* Main.storyboard */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		8D05D1DD1BE85A150067B77B /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				8D05D1CA1BE855E30067B77B /* ViewController.h */,
+				8D05D1CB1BE855E30067B77B /* ViewController.m */,
+			);
+			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		E1AE77ABAE12686DF35A1724 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				A084D8629F9D742B7BB3A8F5 /* Pods.debug.xcconfig */,
+				D99197DB55646F7738959706 /* Pods.release.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -86,9 +139,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 8D05D1D81BE855E30067B77B /* Build configuration list for PBXNativeTarget "AcroFinder" */;
 			buildPhases = (
+				977B5CC956792B569A17567D /* Check Pods Manifest.lock */,
 				8D05D1BD1BE855E30067B77B /* Sources */,
 				8D05D1BE1BE855E30067B77B /* Frameworks */,
 				8D05D1BF1BE855E30067B77B /* Resources */,
+				32FDF55725FD9562BB8A1BC5 /* Embed Pods Frameworks */,
+				92355AB5A0D4D05196DCC1FD /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -144,6 +200,54 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		32FDF55725FD9562BB8A1BC5 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		92355AB5A0D4D05196DCC1FD /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		977B5CC956792B569A17567D /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		8D05D1BD1BE855E30067B77B /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -151,6 +255,7 @@
 			files = (
 				8D05D1CC1BE855E30067B77B /* ViewController.m in Sources */,
 				8D05D1C91BE855E30067B77B /* AppDelegate.m in Sources */,
+				8D05D1E01BE865E60067B77B /* AcronymSearchResult.m in Sources */,
 				8D05D1C61BE855E30067B77B /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -261,6 +366,7 @@
 		};
 		8D05D1D91BE855E30067B77B /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A084D8629F9D742B7BB3A8F5 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = AcroFinder/Info.plist;
@@ -272,6 +378,7 @@
 		};
 		8D05D1DA1BE855E30067B77B /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D99197DB55646F7738959706 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = AcroFinder/Info.plist;
@@ -300,6 +407,7 @@
 				8D05D1DA1BE855E30067B77B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
