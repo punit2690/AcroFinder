@@ -9,11 +9,15 @@
 /* Begin PBXBuildFile section */
 		8D05D1C61BE855E30067B77B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D05D1C51BE855E30067B77B /* main.m */; };
 		8D05D1C91BE855E30067B77B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D05D1C81BE855E30067B77B /* AppDelegate.m */; };
-		8D05D1CC1BE855E30067B77B /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D05D1CB1BE855E30067B77B /* ViewController.m */; };
 		8D05D1CF1BE855E30067B77B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8D05D1CD1BE855E30067B77B /* Main.storyboard */; };
 		8D05D1D11BE855E30067B77B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8D05D1D01BE855E30067B77B /* Assets.xcassets */; };
 		8D05D1D41BE855E30067B77B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8D05D1D21BE855E30067B77B /* LaunchScreen.storyboard */; };
 		8D05D1E01BE865E60067B77B /* AcronymSearchResult.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D05D1DF1BE865E60067B77B /* AcronymSearchResult.m */; };
+		8D05D1E31BE86BA60067B77B /* KeyConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D05D1E21BE86BA60067B77B /* KeyConstants.m */; };
+		8D05D1E61BE87C330067B77B /* WebServiceAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D05D1E51BE87C330067B77B /* WebServiceAPI.m */; };
+		8D05D1E91BE881AA0067B77B /* SearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D05D1E81BE881AA0067B77B /* SearchViewController.m */; };
+		8D05D1EC1BE8E0110067B77B /* AcronymSearchResultsArray.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D05D1EB1BE8E0110067B77B /* AcronymSearchResultsArray.m */; };
+		8D05D1EF1BE9863C0067B77B /* AsyncNetworkRequestManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D05D1EE1BE9863C0067B77B /* AsyncNetworkRequestManager.m */; };
 		975D62BC5547014EEAE1763B /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 561625DC6EB6C0DDA776920D /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -23,14 +27,22 @@
 		8D05D1C51BE855E30067B77B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		8D05D1C71BE855E30067B77B /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		8D05D1C81BE855E30067B77B /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		8D05D1CA1BE855E30067B77B /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		8D05D1CB1BE855E30067B77B /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		8D05D1CE1BE855E30067B77B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		8D05D1D01BE855E30067B77B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8D05D1D31BE855E30067B77B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8D05D1D51BE855E30067B77B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8D05D1DE1BE865E60067B77B /* AcronymSearchResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AcronymSearchResult.h; path = Models/AcronymSearchResult.h; sourceTree = "<group>"; };
 		8D05D1DF1BE865E60067B77B /* AcronymSearchResult.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AcronymSearchResult.m; path = Models/AcronymSearchResult.m; sourceTree = "<group>"; };
+		8D05D1E11BE86BA60067B77B /* KeyConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KeyConstants.h; path = Models/KeyConstants.h; sourceTree = "<group>"; };
+		8D05D1E21BE86BA60067B77B /* KeyConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KeyConstants.m; path = Models/KeyConstants.m; sourceTree = "<group>"; };
+		8D05D1E41BE87C330067B77B /* WebServiceAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WebServiceAPI.h; path = Models/WebServiceAPI.h; sourceTree = "<group>"; };
+		8D05D1E51BE87C330067B77B /* WebServiceAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WebServiceAPI.m; path = Models/WebServiceAPI.m; sourceTree = "<group>"; };
+		8D05D1E71BE881AA0067B77B /* SearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SearchViewController.h; path = ViewControllers/SearchViewController.h; sourceTree = "<group>"; };
+		8D05D1E81BE881AA0067B77B /* SearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SearchViewController.m; path = ViewControllers/SearchViewController.m; sourceTree = "<group>"; };
+		8D05D1EA1BE8E0110067B77B /* AcronymSearchResultsArray.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AcronymSearchResultsArray.h; path = Models/AcronymSearchResultsArray.h; sourceTree = "<group>"; };
+		8D05D1EB1BE8E0110067B77B /* AcronymSearchResultsArray.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AcronymSearchResultsArray.m; path = Models/AcronymSearchResultsArray.m; sourceTree = "<group>"; };
+		8D05D1ED1BE9863B0067B77B /* AsyncNetworkRequestManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AsyncNetworkRequestManager.h; path = Models/AsyncNetworkRequestManager.h; sourceTree = "<group>"; };
+		8D05D1EE1BE9863C0067B77B /* AsyncNetworkRequestManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AsyncNetworkRequestManager.m; path = Models/AsyncNetworkRequestManager.m; sourceTree = "<group>"; };
 		A084D8629F9D742B7BB3A8F5 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		D99197DB55646F7738959706 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -102,6 +114,14 @@
 			children = (
 				8D05D1DE1BE865E60067B77B /* AcronymSearchResult.h */,
 				8D05D1DF1BE865E60067B77B /* AcronymSearchResult.m */,
+				8D05D1E11BE86BA60067B77B /* KeyConstants.h */,
+				8D05D1E21BE86BA60067B77B /* KeyConstants.m */,
+				8D05D1E41BE87C330067B77B /* WebServiceAPI.h */,
+				8D05D1E51BE87C330067B77B /* WebServiceAPI.m */,
+				8D05D1EA1BE8E0110067B77B /* AcronymSearchResultsArray.h */,
+				8D05D1EB1BE8E0110067B77B /* AcronymSearchResultsArray.m */,
+				8D05D1ED1BE9863B0067B77B /* AsyncNetworkRequestManager.h */,
+				8D05D1EE1BE9863C0067B77B /* AsyncNetworkRequestManager.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -117,8 +137,8 @@
 		8D05D1DD1BE85A150067B77B /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				8D05D1CA1BE855E30067B77B /* ViewController.h */,
-				8D05D1CB1BE855E30067B77B /* ViewController.m */,
+				8D05D1E71BE881AA0067B77B /* SearchViewController.h */,
+				8D05D1E81BE881AA0067B77B /* SearchViewController.m */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -253,10 +273,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8D05D1CC1BE855E30067B77B /* ViewController.m in Sources */,
+				8D05D1E61BE87C330067B77B /* WebServiceAPI.m in Sources */,
+				8D05D1EC1BE8E0110067B77B /* AcronymSearchResultsArray.m in Sources */,
 				8D05D1C91BE855E30067B77B /* AppDelegate.m in Sources */,
+				8D05D1EF1BE9863C0067B77B /* AsyncNetworkRequestManager.m in Sources */,
+				8D05D1E31BE86BA60067B77B /* KeyConstants.m in Sources */,
 				8D05D1E01BE865E60067B77B /* AcronymSearchResult.m in Sources */,
 				8D05D1C61BE855E30067B77B /* main.m in Sources */,
+				8D05D1E91BE881AA0067B77B /* SearchViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

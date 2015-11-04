@@ -123,10 +123,10 @@
             </objects>
             <point key="canvasLocation" x="908" y="-1071"/>
         </scene>
-        <!--View Controller-->
+        <!--Search View Controller-->
         <scene sceneID="t5i-Vt-JX6">
             <objects>
-                <viewController id="gl3-2d-2CK" sceneMemberID="viewController">
+                <viewController id="gl3-2d-2CK" customClass="SearchViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="I2Q-3g-PNK"/>
                         <viewControllerLayoutGuide type="bottom" id="01b-0P-dnU"/>
@@ -139,13 +139,16 @@
                                 <rect key="frame" x="0.0" y="64" width="600" height="44"/>
                                 <animations/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="gl3-2d-2CK" id="MhA-My-uwc"/>
+                                </connections>
                             </searchBar>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="F2U-s9-gR4">
                                 <rect key="frame" x="0.0" y="108" width="600" height="443"/>
                                 <animations/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="searchResultCell" id="sCG-fj-Ul8">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" id="sCG-fj-Ul8">
                                         <rect key="frame" x="0.0" y="28" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="sCG-fj-Ul8" id="yzj-ft-r1P">
@@ -156,6 +159,10 @@
                                         <animations/>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="gl3-2d-2CK" id="jjc-Sy-Pas"/>
+                                    <outlet property="delegate" destination="gl3-2d-2CK" id="cLt-cf-Rpk"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <animations/>
@@ -171,6 +178,10 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="CGg-QQ-0N2"/>
+                    <connections>
+                        <outlet property="searchBar" destination="mBK-KP-Dzx" id="9Nk-jf-po4"/>
+                        <outlet property="tableView" destination="F2U-s9-gR4" id="NqG-w5-33J"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cKW-or-pbo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

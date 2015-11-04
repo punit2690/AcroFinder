@@ -7,30 +7,43 @@
 //
 
 #import "AcronymSearchResult.h"
-
-@interface AcronymSearchResult()
-
-@property (nonatomic, assign) NSUInteger frequency;
-@property (nonatomic, assign) NSInteger year;
-@property (nonatomic, copy) NSString *lf;
-@property (nonatomic, copy) NSString *sf;
-
-@end
+#import "KeyConstants.h"
 
 @implementation AcronymSearchResult
 
 - (instancetype)initWithLongForm:(NSString *)lf
-                       ShortForm:(NSString *)sf
-                       Frequency:(NSUInteger)frequency
-                         andYear:(NSInteger)year {
+                       shortForm:(NSString *)sf
+                       frequency:(NSUInteger)frequency
+                         andYear:(NSInteger)year
+                      variations:(NSArray *)variations {
     
     if (self = [super init]) {
+        
         _lf = lf;
         _sf = sf;
-        _year = year;
-        _frequency = frequency;
+        _year = [NSNumber numberWithInteger:year];
+        _frequency = [NSNumber numberWithUnsignedInteger:frequency];
+
+        NSMutableArray *array = [NSMutableArray new];
+        
+        for (NSDictionary *dict in variations) {
+            
+            AcronymSearchResult *acronymSearchResult = [[AcronymSearchResult alloc] initWithLongForm:[dict objectForKey:KEY_SR_LONGFORM]
+                                                                                           shortForm:[dict objectForKey:KEY_SR_SHORTFORM]
+                                                                                           frequency:[[dict objectForKey:KEY_SR_FREQUENCY] unsignedIntegerValue]
+                                                                                             andYear:[[dict objectForKey:KEY_SR_YEAR] integerValue]
+                                                                                          variations:nil];
+            if (acronymSearchResult) {
+                [array addObject:acronymSearchResult];
+            }
+        }
+        
+        _variations = [array copy];
+        array = nil;
+        
         return self;
     }
     return nil;
 }
+
 @end
