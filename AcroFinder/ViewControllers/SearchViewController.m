@@ -8,17 +8,21 @@
 
 #import "SearchViewController.h"
 #import "AcronymSearchResultsArray.h"
-#
+#import <MBProgressHUD/MBProgressHUD.h>
+
 @interface SearchViewController()<UISearchBarDelegate, UITableViewDataSource, UITableViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (strong, nonatomic) AcronymSearchResultsArray *acronymSearchResultsArray;
+@property (weak, nonatomic) IBOutlet UISegmentedControl *searchTypeSegmentedControl;
 
 @end
 
 @implementation SearchViewController {
     NSTimer *timer;
+    UIView *overlayView;
+    SEARCH_TYPE selectedSearchType;
 }
 
 - (void)viewDidLoad {
@@ -58,13 +62,29 @@
     
 }
 
+- (IBAction)searchSegmentedControlValueChanged:(id)sender {
+    selectedSearchType = (((UISegmentedControl *)sender).selectedSegmentIndex == 0)?SHORTFORM_SEARCH:LONGFORM_SEARCH;
+    [self requestData];
+}
+
 #pragma mark - Search methods
 
 - (void)reload {
+    
     [self.tableView reloadData];
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [MBProgressHUD hideAllHUDsForView:overlayView animated:YES];
+        [UIView animateWithDuration:0.1 animations:^{
+            overlayView.backgroundColor = [UIColor colorWithWhite:1 alpha:1];
+        } completion:^(BOOL finished) {
+            [overlayView removeFromSuperview];
+            overlayView = nil;
+        }];
+    });
 }
 
 #pragma mark - UITableViewDelegate methods
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
     UITableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:@"cell"];
@@ -83,10 +103,12 @@
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
     [self.searchBar resignFirstResponder];
 }
+
 #pragma mark - UISearchBarDelegate methods
 
 - (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar {
     [self requestData];
+    [timer invalidate];
     timer = nil;
 }
 
@@ -98,6 +120,18 @@
 }
 
 - (void)requestData {
-    [self.acronymSearchResultsArray searchResultsOfType:SHORTFORM_SEARCH forQuery:self.searchBar.text];
+    
+    dispatch_async(dispatch_get_main_queue(), ^{
+        
+        [overlayView removeFromSuperview];
+        overlayView = nil;
+        overlayView = [[UIView alloc] initWithFrame:self.tableView.frame];
+        overlayView.backgroundColor = [UIColor colorWithWhite:0 alpha:0.7];
+        [self.view insertSubview:overlayView aboveSubview:self.tableView];
+        [MBProgressHUD showHUDAddedTo:overlayView animated:YES];
+    });
+
+    [self.acronymSearchResultsArray searchResultsOfType:selectedSearchType forQuery:self.searchBar.text];
 }
+
 @end

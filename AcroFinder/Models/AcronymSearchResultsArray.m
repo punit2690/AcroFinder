@@ -30,6 +30,7 @@
     
     if ([task isEqualToString:@"RESULTS_SEARCH"]) {
         
+        self.resultsArray = nil;
         NSString *sf;
         NSString *lf;
         
@@ -40,13 +41,13 @@
                 
                 responseObject = [((NSArray *)responseObject) objectAtIndex:0];
                 if (searchType == SHORTFORM_SEARCH) {
-                    sf = [responseObject objectForKey:KEY_SR_SHORTFORM];
+                    sf = [responseObject objectForKey:@"sf"];
                 }
                 else {
-                    lf = [responseObject objectForKey:KEY_SR_LONGFORM];
+                    lf = [responseObject objectForKey:@"sf"];
                 }
                 
-                for (NSDictionary *dict in [responseObject objectForKey:(searchType == SHORTFORM_SEARCH)?@"lfs":@"sfs"]) {
+                for (NSDictionary *dict in [responseObject objectForKey:@"lfs"]) {
                     /*{
                      "lf":"human malignant mesothelioma",
                      "freq":17,
@@ -65,10 +66,11 @@
                 self.resultsArray = [results copy];
                 results = nil;
                 
-                [[NSNotificationCenter defaultCenter] postNotificationName:@"RESULTS_SEARCH"
-                                                                    object:nil];
             }
         }
+        
+        [[NSNotificationCenter defaultCenter] postNotificationName:@"RESULTS_SEARCH"
+                                                            object:nil];
     }
 }
 

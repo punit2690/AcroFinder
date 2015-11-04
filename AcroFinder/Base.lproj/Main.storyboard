@@ -123,7 +123,7 @@
             </objects>
             <point key="canvasLocation" x="908" y="-1071"/>
         </scene>
-        <!--Search View Controller-->
+        <!--AcronymFinder-->
         <scene sceneID="t5i-Vt-JX6">
             <objects>
                 <viewController id="gl3-2d-2CK" customClass="SearchViewController" sceneMemberID="viewController">
@@ -144,15 +144,15 @@
                                 </connections>
                             </searchBar>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="F2U-s9-gR4">
-                                <rect key="frame" x="0.0" y="108" width="600" height="443"/>
+                                <rect key="frame" x="0.0" y="136" width="600" height="415"/>
                                 <animations/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" id="sCG-fj-Ul8">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="cell" id="sCG-fj-Ul8">
                                         <rect key="frame" x="0.0" y="28" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="sCG-fj-Ul8" id="yzj-ft-r1P">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="567" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <animations/>
                                         </tableViewCellContentView>
@@ -164,22 +164,37 @@
                                     <outlet property="delegate" destination="gl3-2d-2CK" id="cLt-cf-Rpk"/>
                                 </connections>
                             </tableView>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="pkM-08-dSy">
+                                <rect key="frame" x="0.0" y="108" width="600" height="29"/>
+                                <animations/>
+                                <segments>
+                                    <segment title="Short Form"/>
+                                    <segment title="Long Form"/>
+                                </segments>
+                                <connections>
+                                    <action selector="searchSegmentedControlValueChanged:" destination="gl3-2d-2CK" eventType="valueChanged" id="lg9-eU-usj"/>
+                                </connections>
+                            </segmentedControl>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="F2U-s9-gR4" firstAttribute="top" secondItem="pkM-08-dSy" secondAttribute="bottom" id="0gc-lf-M1X"/>
                             <constraint firstItem="F2U-s9-gR4" firstAttribute="leading" secondItem="5dk-PJ-Ebp" secondAttribute="leading" id="55t-q4-TkI"/>
+                            <constraint firstAttribute="trailing" secondItem="pkM-08-dSy" secondAttribute="trailing" id="BDi-Zs-wFF"/>
+                            <constraint firstItem="pkM-08-dSy" firstAttribute="leading" secondItem="5dk-PJ-Ebp" secondAttribute="leading" id="LB5-nM-R6Z"/>
                             <constraint firstItem="01b-0P-dnU" firstAttribute="top" secondItem="F2U-s9-gR4" secondAttribute="bottom" id="PPZ-GH-5MP"/>
                             <constraint firstItem="mBK-KP-Dzx" firstAttribute="leading" secondItem="5dk-PJ-Ebp" secondAttribute="leading" id="kGc-9j-IXh"/>
                             <constraint firstAttribute="trailing" secondItem="F2U-s9-gR4" secondAttribute="trailing" id="mGG-Et-Qdp"/>
+                            <constraint firstItem="pkM-08-dSy" firstAttribute="top" secondItem="mBK-KP-Dzx" secondAttribute="bottom" id="n8C-by-u5y"/>
                             <constraint firstItem="mBK-KP-Dzx" firstAttribute="top" secondItem="I2Q-3g-PNK" secondAttribute="bottom" id="sRx-Rf-CgD"/>
                             <constraint firstAttribute="trailing" secondItem="mBK-KP-Dzx" secondAttribute="trailing" id="yqV-wW-YRj"/>
-                            <constraint firstItem="F2U-s9-gR4" firstAttribute="top" secondItem="mBK-KP-Dzx" secondAttribute="bottom" id="zjU-vf-ZDE"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="CGg-QQ-0N2"/>
+                    <navigationItem key="navigationItem" title="AcronymFinder" id="CGg-QQ-0N2"/>
                     <connections>
                         <outlet property="searchBar" destination="mBK-KP-Dzx" id="9Nk-jf-po4"/>
+                        <outlet property="searchTypeSegmentedControl" destination="pkM-08-dSy" id="ed6-jW-N0k"/>
                         <outlet property="tableView" destination="F2U-s9-gR4" id="NqG-w5-33J"/>
                     </connections>
                 </viewController>

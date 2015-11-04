@@ -13,6 +13,7 @@
 
 +(void)initWithUrl:(NSString *)urlString delegate:(id<AsyncNetworkRequestManagerDelegate>)delegate andTask:(NSString *)task searchType:(SEARCH_TYPE)searchType {
     
+    NSLog(@"Url: %@", urlString);
     NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:urlString]];
     
     AFHTTPRequestOperation *operation = [[AFHTTPRequestOperation alloc] initWithRequest:request];
@@ -35,4 +36,5 @@
     
     [operation start];
 }
+
 @end
