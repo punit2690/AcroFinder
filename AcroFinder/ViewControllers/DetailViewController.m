@@ -90,6 +90,7 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     CustomTableViewCell *cell = [self.tableView cellForRowAtIndexPath:[self.tableView indexPathForSelectedRow]];
+    [self.tableView deselectRowAtIndexPath:[self.tableView indexPathForSelectedRow] animated:NO];
     DetailViewController *dvc = [self.storyboard instantiateViewControllerWithIdentifier:@"dvc"];
     dvc.acronymSearchResult = cell.acronymSearchResult;
     [self.navigationController showViewController:dvc sender:self];
