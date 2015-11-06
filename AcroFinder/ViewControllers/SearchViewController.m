@@ -25,6 +25,7 @@
     NSTimer *timer;
     UIView *overlayView;
     SEARCH_TYPE selectedSearchType;
+    UIRefreshControl *refreshControl;
 }
 
 - (void)viewDidLoad {
@@ -61,7 +62,10 @@
 }
 
 - (void)initUI {
-    
+    refreshControl = [[UIRefreshControl alloc] init];
+    refreshControl.tintColor = [UIColor grayColor];
+    [refreshControl addTarget:self action:@selector(requestData) forControlEvents:UIControlEventValueChanged];
+    [self.tableView addSubview:refreshControl];
 }
 
 - (IBAction)searchSegmentedControlValueChanged:(id)sender {
@@ -83,12 +87,14 @@
     
     [self.tableView reloadData];
     dispatch_async(dispatch_get_main_queue(), ^{
+        [refreshControl endRefreshing];
         [MBProgressHUD hideAllHUDsForView:overlayView animated:YES];
         [UIView animateWithDuration:0.1 animations:^{
             overlayView.backgroundColor = [UIColor colorWithWhite:1 alpha:1];
         } completion:^(BOOL finished) {
             [overlayView removeFromSuperview];
             overlayView = nil;
+            self.tableView.userInteractionEnabled = YES;
         }];
     });
 }
@@ -140,17 +146,19 @@
 
 - (void)requestData {
     
-    dispatch_async(dispatch_get_main_queue(), ^{
+    if (self.view.window) {
+        dispatch_async(dispatch_get_main_queue(), ^{
+            self.tableView.userInteractionEnabled = NO;
+            [overlayView removeFromSuperview];
+            overlayView = nil;
+            overlayView = [[UIView alloc] initWithFrame:self.tableView.frame];
+            overlayView.backgroundColor = [UIColor colorWithWhite:0 alpha:0.7];
+            [self.view insertSubview:overlayView aboveSubview:self.tableView];
+            [MBProgressHUD showHUDAddedTo:overlayView animated:YES];
+        });
         
-        [overlayView removeFromSuperview];
-        overlayView = nil;
-        overlayView = [[UIView alloc] initWithFrame:self.tableView.frame];
-        overlayView.backgroundColor = [UIColor colorWithWhite:0 alpha:0.7];
-        [self.view insertSubview:overlayView aboveSubview:self.tableView];
-        [MBProgressHUD showHUDAddedTo:overlayView animated:YES];
-    });
-
-    [self.acronymSearchResultsArray searchResultsOfType:selectedSearchType forQuery:self.searchBar.text];
+        [self.acronymSearchResultsArray searchResultsOfType:selectedSearchType forQuery:self.searchBar.text];
+    }
 }
 
 @end
