@@ -83,6 +83,26 @@
 }
 #pragma mark - Search methods
 
+- (void)requestData {
+    
+    if (self.view.window) {
+        if (!refreshControl.isRefreshing) {
+            
+            dispatch_async(dispatch_get_main_queue(), ^{
+                self.tableView.userInteractionEnabled = NO;
+                [overlayView removeFromSuperview];
+                overlayView = nil;
+                overlayView = [[UIView alloc] initWithFrame:self.tableView.frame];
+                overlayView.backgroundColor = [UIColor colorWithWhite:0 alpha:0.7];
+                [self.view insertSubview:overlayView aboveSubview:self.tableView];
+                [MBProgressHUD showHUDAddedTo:overlayView animated:YES];
+            });
+        }
+        
+        [self.acronymSearchResultsArray searchResultsOfType:selectedSearchType forQuery:self.searchBar.text];
+    }
+}
+
 - (void)reload {
     
     [self.tableView reloadData];
@@ -142,23 +162,6 @@
     [timer invalidate];
     timer = nil;
     timer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(requestData) userInfo:nil repeats:NO];
-}
-
-- (void)requestData {
-    
-    if (self.view.window) {
-        dispatch_async(dispatch_get_main_queue(), ^{
-            self.tableView.userInteractionEnabled = NO;
-            [overlayView removeFromSuperview];
-            overlayView = nil;
-            overlayView = [[UIView alloc] initWithFrame:self.tableView.frame];
-            overlayView.backgroundColor = [UIColor colorWithWhite:0 alpha:0.7];
-            [self.view insertSubview:overlayView aboveSubview:self.tableView];
-            [MBProgressHUD showHUDAddedTo:overlayView animated:YES];
-        });
-        
-        [self.acronymSearchResultsArray searchResultsOfType:selectedSearchType forQuery:self.searchBar.text];
-    }
 }
 
 @end
