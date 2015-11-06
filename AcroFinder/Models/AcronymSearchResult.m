@@ -28,8 +28,8 @@
         
         for (NSDictionary *dict in variations) {
             
-            AcronymSearchResult *acronymSearchResult = [[AcronymSearchResult alloc] initWithLongForm:[dict objectForKey:KEY_SR_LONGFORM]
-                                                                                           shortForm:[dict objectForKey:KEY_SR_SHORTFORM]
+            AcronymSearchResult *acronymSearchResult = [[AcronymSearchResult alloc] initWithLongForm:[dict objectForKey:KEY_SR_LONGFORM]?[dict objectForKey:KEY_SR_LONGFORM]:lf
+                                                                                           shortForm:[dict objectForKey:KEY_SR_SHORTFORM]?[dict objectForKey:KEY_SR_SHORTFORM]:sf
                                                                                            frequency:[[dict objectForKey:KEY_SR_FREQUENCY] unsignedIntegerValue]
                                                                                              andYear:[[dict objectForKey:KEY_SR_YEAR] integerValue]
                                                                                           variations:nil];

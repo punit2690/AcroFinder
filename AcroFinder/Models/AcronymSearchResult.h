@@ -10,8 +10,8 @@
 
 @interface AcronymSearchResult : NSObject
 
-@property (nonatomic, assign) NSNumber *frequency;
-@property (nonatomic, assign) NSNumber *year;
+@property (nonatomic, strong) NSNumber *frequency;
+@property (nonatomic, strong) NSNumber *year;
 @property (nonatomic, copy) NSString *lf;
 @property (nonatomic, copy) NSString *sf;
 @property (nonatomic, strong) NSArray *variations;

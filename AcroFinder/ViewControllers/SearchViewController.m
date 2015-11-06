@@ -9,6 +9,8 @@
 #import "SearchViewController.h"
 #import "AcronymSearchResultsArray.h"
 #import <MBProgressHUD/MBProgressHUD.h>
+#import "DetailViewController.h"
+#import "CustomTableViewCell.h"
 
 @interface SearchViewController()<UISearchBarDelegate, UITableViewDataSource, UITableViewDelegate>
 
@@ -67,6 +69,14 @@
     [self requestData];
 }
 
+#pragma mark - segue methods 
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([segue.identifier isEqualToString:@"showDetail"]) {
+        DetailViewController *detailViewController = (DetailViewController *)[segue destinationViewController];
+        detailViewController.acronymSearchResult = ((CustomTableViewCell *)[self.tableView cellForRowAtIndexPath:[self.tableView indexPathForSelectedRow]]).acronymSearchResult;
+        [self.tableView deselectRowAtIndexPath:[self.tableView indexPathForSelectedRow] animated:NO];
+    }
+}
 #pragma mark - Search methods
 
 - (void)reload {
@@ -87,9 +97,14 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    UITableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:@"cell"];
-    cell.textLabel.text = ((AcronymSearchResult *)[self.acronymSearchResultsArray.resultsArray objectAtIndex:indexPath.row]).lf;
+    CustomTableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:@"cell"];
+    cell.selectedSearchType = selectedSearchType;
+    cell.acronymSearchResult = [self.acronymSearchResultsArray.resultsArray objectAtIndex:indexPath.row];
     return cell;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    [self performSegueWithIdentifier:@"showDetail" sender:self];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
@@ -110,13 +125,17 @@
     [self requestData];
     [timer invalidate];
     timer = nil;
+    [self.searchBar resignFirstResponder];
+}
+
+- (void)searchBarTextDidEndEditing:(UISearchBar *)searchBar {
+    [searchBar resignFirstResponder];
 }
 
 - (void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText {
     [timer invalidate];
     timer = nil;
     timer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(requestData) userInfo:nil repeats:NO];
-
 }
 
 - (void)requestData {

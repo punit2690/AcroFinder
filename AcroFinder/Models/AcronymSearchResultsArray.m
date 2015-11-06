@@ -32,7 +32,6 @@
         
         self.resultsArray = nil;
         NSString *sf;
-        NSString *lf;
         
         NSMutableArray *results = [NSMutableArray new];
         
@@ -40,12 +39,7 @@
             if ([((NSArray *)responseObject) count]>0) {
                 
                 responseObject = [((NSArray *)responseObject) objectAtIndex:0];
-                if (searchType == SHORTFORM_SEARCH) {
-                    sf = [responseObject objectForKey:@"sf"];
-                }
-                else {
-                    lf = [responseObject objectForKey:@"sf"];
-                }
+                sf = [responseObject objectForKey:@"sf"];
                 
                 for (NSDictionary *dict in [responseObject objectForKey:@"lfs"]) {
                     /*{
@@ -54,8 +48,8 @@
                      "since":1986,
                      "vars":[]
                      }*/
-                    AcronymSearchResult *acronymSearchResult = [[AcronymSearchResult alloc] initWithLongForm:(searchType == LONGFORM_SEARCH)?lf:[dict objectForKey:KEY_SR_LONGFORM]
-                                                                                                   shortForm:(searchType == LONGFORM_SEARCH)?sf:[dict objectForKey:KEY_SR_SHORTFORM]
+                    AcronymSearchResult *acronymSearchResult = [[AcronymSearchResult alloc] initWithLongForm:[dict objectForKey:KEY_SR_LONGFORM]
+                                                                                                   shortForm:sf
                                                                                                    frequency:[[dict objectForKey:KEY_SR_FREQUENCY] unsignedIntegerValue]
                                                                                                      andYear:[[dict objectForKey:KEY_SR_YEAR] integerValue]
                                                                                                   variations:[dict objectForKey:KEY_SR_VARIATIONS]];

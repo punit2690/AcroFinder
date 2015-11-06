@@ -18,6 +18,10 @@
 		8D05D1E91BE881AA0067B77B /* SearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D05D1E81BE881AA0067B77B /* SearchViewController.m */; };
 		8D05D1EC1BE8E0110067B77B /* AcronymSearchResultsArray.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D05D1EB1BE8E0110067B77B /* AcronymSearchResultsArray.m */; };
 		8D05D1EF1BE9863C0067B77B /* AsyncNetworkRequestManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D05D1EE1BE9863C0067B77B /* AsyncNetworkRequestManager.m */; };
+		8D05D1F11BEB0C150067B77B /* ResultDetails.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8D05D1F01BEB0C150067B77B /* ResultDetails.xib */; };
+		8D05D1F41BEB105B0067B77B /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D05D1F31BEB105B0067B77B /* DetailViewController.m */; };
+		8D05D1F71BEB13010067B77B /* ResultsDetails.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D05D1F61BEB13010067B77B /* ResultsDetails.m */; };
+		8D05D1FA1BEB1DC90067B77B /* CustomTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D05D1F91BEB1DC90067B77B /* CustomTableViewCell.m */; };
 		975D62BC5547014EEAE1763B /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 561625DC6EB6C0DDA776920D /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -43,6 +47,13 @@
 		8D05D1EB1BE8E0110067B77B /* AcronymSearchResultsArray.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AcronymSearchResultsArray.m; path = Models/AcronymSearchResultsArray.m; sourceTree = "<group>"; };
 		8D05D1ED1BE9863B0067B77B /* AsyncNetworkRequestManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AsyncNetworkRequestManager.h; path = Models/AsyncNetworkRequestManager.h; sourceTree = "<group>"; };
 		8D05D1EE1BE9863C0067B77B /* AsyncNetworkRequestManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AsyncNetworkRequestManager.m; path = Models/AsyncNetworkRequestManager.m; sourceTree = "<group>"; };
+		8D05D1F01BEB0C150067B77B /* ResultDetails.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ResultDetails.xib; sourceTree = "<group>"; };
+		8D05D1F21BEB105B0067B77B /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DetailViewController.h; path = ViewControllers/DetailViewController.h; sourceTree = "<group>"; };
+		8D05D1F31BEB105B0067B77B /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DetailViewController.m; path = ViewControllers/DetailViewController.m; sourceTree = "<group>"; };
+		8D05D1F51BEB13010067B77B /* ResultsDetails.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ResultsDetails.h; path = VIews/ResultsDetails.h; sourceTree = "<group>"; };
+		8D05D1F61BEB13010067B77B /* ResultsDetails.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ResultsDetails.m; path = VIews/ResultsDetails.m; sourceTree = "<group>"; };
+		8D05D1F81BEB1DC90067B77B /* CustomTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CustomTableViewCell.h; path = VIews/CustomTableViewCell.h; sourceTree = "<group>"; };
+		8D05D1F91BEB1DC90067B77B /* CustomTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CustomTableViewCell.m; path = VIews/CustomTableViewCell.m; sourceTree = "<group>"; };
 		A084D8629F9D742B7BB3A8F5 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		D99197DB55646F7738959706 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -130,6 +141,11 @@
 			isa = PBXGroup;
 			children = (
 				8D05D1CD1BE855E30067B77B /* Main.storyboard */,
+				8D05D1F01BEB0C150067B77B /* ResultDetails.xib */,
+				8D05D1F51BEB13010067B77B /* ResultsDetails.h */,
+				8D05D1F61BEB13010067B77B /* ResultsDetails.m */,
+				8D05D1F81BEB1DC90067B77B /* CustomTableViewCell.h */,
+				8D05D1F91BEB1DC90067B77B /* CustomTableViewCell.m */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -139,6 +155,8 @@
 			children = (
 				8D05D1E71BE881AA0067B77B /* SearchViewController.h */,
 				8D05D1E81BE881AA0067B77B /* SearchViewController.m */,
+				8D05D1F21BEB105B0067B77B /* DetailViewController.h */,
+				8D05D1F31BEB105B0067B77B /* DetailViewController.m */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -215,6 +233,7 @@
 				8D05D1D41BE855E30067B77B /* LaunchScreen.storyboard in Resources */,
 				8D05D1D11BE855E30067B77B /* Assets.xcassets in Resources */,
 				8D05D1CF1BE855E30067B77B /* Main.storyboard in Resources */,
+				8D05D1F11BEB0C150067B77B /* ResultDetails.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -275,10 +294,13 @@
 			files = (
 				8D05D1E61BE87C330067B77B /* WebServiceAPI.m in Sources */,
 				8D05D1EC1BE8E0110067B77B /* AcronymSearchResultsArray.m in Sources */,
+				8D05D1F41BEB105B0067B77B /* DetailViewController.m in Sources */,
 				8D05D1C91BE855E30067B77B /* AppDelegate.m in Sources */,
 				8D05D1EF1BE9863C0067B77B /* AsyncNetworkRequestManager.m in Sources */,
+				8D05D1FA1BEB1DC90067B77B /* CustomTableViewCell.m in Sources */,
 				8D05D1E31BE86BA60067B77B /* KeyConstants.m in Sources */,
 				8D05D1E01BE865E60067B77B /* AcronymSearchResult.m in Sources */,
+				8D05D1F71BEB13010067B77B /* ResultsDetails.m in Sources */,
 				8D05D1C61BE855E30067B77B /* main.m in Sources */,
 				8D05D1E91BE881AA0067B77B /* SearchViewController.m in Sources */,
 			);

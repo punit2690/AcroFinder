@@ -12,8 +12,8 @@
 
 NSString *const KEY_SR_LONGFORM = @"lf";
 NSString *const KEY_SR_SHORTFORM = @"sf";
-NSString *const KEY_SR_FREQUENCY = @"frequency";
-NSString *const KEY_SR_YEAR = @"year";
+NSString *const KEY_SR_FREQUENCY = @"freq";
+NSString *const KEY_SR_YEAR = @"since";
 NSString *const KEY_SR_VARIATIONS = @"vars";
 
 @end
