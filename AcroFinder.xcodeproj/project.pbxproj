@@ -11,7 +11,6 @@
 		8D05D1C91BE855E30067B77B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D05D1C81BE855E30067B77B /* AppDelegate.m */; };
 		8D05D1CF1BE855E30067B77B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8D05D1CD1BE855E30067B77B /* Main.storyboard */; };
 		8D05D1D11BE855E30067B77B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8D05D1D01BE855E30067B77B /* Assets.xcassets */; };
-		8D05D1D41BE855E30067B77B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8D05D1D21BE855E30067B77B /* LaunchScreen.storyboard */; };
 		8D05D1E01BE865E60067B77B /* AcronymSearchResult.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D05D1DF1BE865E60067B77B /* AcronymSearchResult.m */; };
 		8D05D1E31BE86BA60067B77B /* KeyConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D05D1E21BE86BA60067B77B /* KeyConstants.m */; };
 		8D05D1E61BE87C330067B77B /* WebServiceAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D05D1E51BE87C330067B77B /* WebServiceAPI.m */; };
@@ -22,6 +21,7 @@
 		8D05D1F41BEB105B0067B77B /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D05D1F31BEB105B0067B77B /* DetailViewController.m */; };
 		8D05D1F71BEB13010067B77B /* ResultsDetails.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D05D1F61BEB13010067B77B /* ResultsDetails.m */; };
 		8D05D1FA1BEB1DC90067B77B /* CustomTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D05D1F91BEB1DC90067B77B /* CustomTableViewCell.m */; };
+		8D544C2B1BEC732800F4CA63 /* Launch Screen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8D544C2A1BEC732800F4CA63 /* Launch Screen.xib */; };
 		975D62BC5547014EEAE1763B /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 561625DC6EB6C0DDA776920D /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -33,7 +33,6 @@
 		8D05D1C81BE855E30067B77B /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		8D05D1CE1BE855E30067B77B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		8D05D1D01BE855E30067B77B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		8D05D1D31BE855E30067B77B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8D05D1D51BE855E30067B77B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8D05D1DE1BE865E60067B77B /* AcronymSearchResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AcronymSearchResult.h; path = Models/AcronymSearchResult.h; sourceTree = "<group>"; };
 		8D05D1DF1BE865E60067B77B /* AcronymSearchResult.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AcronymSearchResult.m; path = Models/AcronymSearchResult.m; sourceTree = "<group>"; };
@@ -54,6 +53,7 @@
 		8D05D1F61BEB13010067B77B /* ResultsDetails.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ResultsDetails.m; path = VIews/ResultsDetails.m; sourceTree = "<group>"; };
 		8D05D1F81BEB1DC90067B77B /* CustomTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CustomTableViewCell.h; path = VIews/CustomTableViewCell.h; sourceTree = "<group>"; };
 		8D05D1F91BEB1DC90067B77B /* CustomTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CustomTableViewCell.m; path = VIews/CustomTableViewCell.m; sourceTree = "<group>"; };
+		8D544C2A1BEC732800F4CA63 /* Launch Screen.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "Launch Screen.xib"; sourceTree = "<group>"; };
 		A084D8629F9D742B7BB3A8F5 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		D99197DB55646F7738959706 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -111,11 +111,11 @@
 			isa = PBXGroup;
 			children = (
 				8D05D1D01BE855E30067B77B /* Assets.xcassets */,
-				8D05D1D21BE855E30067B77B /* LaunchScreen.storyboard */,
 				8D05D1D51BE855E30067B77B /* Info.plist */,
 				8D05D1C71BE855E30067B77B /* AppDelegate.h */,
 				8D05D1C81BE855E30067B77B /* AppDelegate.m */,
 				8D05D1C51BE855E30067B77B /* main.m */,
+				8D544C2A1BEC732800F4CA63 /* Launch Screen.xib */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -230,10 +230,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8D05D1D41BE855E30067B77B /* LaunchScreen.storyboard in Resources */,
 				8D05D1D11BE855E30067B77B /* Assets.xcassets in Resources */,
 				8D05D1CF1BE855E30067B77B /* Main.storyboard in Resources */,
 				8D05D1F11BEB0C150067B77B /* ResultDetails.xib in Resources */,
+				8D544C2B1BEC732800F4CA63 /* Launch Screen.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -317,14 +317,6 @@
 			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
-		8D05D1D21BE855E30067B77B /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				8D05D1D31BE855E30067B77B /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
@@ -364,7 +356,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -402,7 +394,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -416,6 +408,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = AcroFinder/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.punitkulkarni.AcroFinder;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -428,6 +421,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = AcroFinder/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.punitkulkarni.AcroFinder;
 				PRODUCT_NAME = "$(TARGET_NAME)";
